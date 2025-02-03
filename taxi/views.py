@@ -42,7 +42,7 @@ def toggle_driver(request: HttpRequest, pk: int) -> HttpResponse:
 
         return redirect(reverse("taxi:car-detail", kwargs={"pk": pk}))
     else:
-        redirect(reverse("taxi:car-detail", kwargs={"pk": pk}))
+        return redirect(reverse("taxi:car-detail", kwargs={"pk": pk}))
 
 
 class ManufacturerListView(LoginRequiredMixin, generic.ListView):
@@ -114,7 +114,6 @@ class DriverCreateView(LoginRequiredMixin, generic.CreateView):
 
 class DriverUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Driver
-    # fields = "__all__"
     success_url = reverse_lazy("taxi:driver-list")
     form_class = DriverLicenseUpdateForm
 

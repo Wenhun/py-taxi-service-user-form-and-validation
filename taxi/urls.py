@@ -19,6 +19,8 @@ from .views import (
     ManufacturerDeleteView,
 )
 
+app_name = "taxi"
+
 urlpatterns = [
     path("", index, name="index"),
     path(
@@ -65,6 +67,3 @@ urlpatterns = [
         name="driver-delete"
     ),
 ]
-
-
-app_name = "taxi"
